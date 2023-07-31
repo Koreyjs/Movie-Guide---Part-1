@@ -26,5 +26,24 @@ def delete(movie_list):
         movie = movie_list.pop(number - 1)
         print(f"{movie} was deleted. \n")
 
+def main():
+    movie_list = ["Avengers", "Austin Powers", "Creed"]
+    
+    movie_guide()
 
+    while True:
+        command = input("Command:   ")
+        if command.lower() == "list":
+            list(movie_list)
+        elif command.lower() == "add":
+            add(movie_list)
+        elif command.lower() == "delete":
+            delete(movie_list)
+        elif command.lower() == "exit":
+            break
+        else:
+            print("Not a valid command, please try again. \n")
+    print("Bye!")
 
+if __name__ == "__main__":
+    main()
